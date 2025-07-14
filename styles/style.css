@@ -1,5 +1,444 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
+  background-image: var(--cover-image);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  font-family: 'IBM Plex Mono', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23.4px;
+}
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+
+.header {
+  height: 1vh;
+  min-height: 668px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(7, 1fr);
+}
+
+.header__theme-menu {
+  align-self: center;
+  justify-self: right;
+  margin-inline-end: 10px;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header__theme-menu-button {
+  background-color: transparent;
+  color: var(--button-color);
+  border: none;
+  font-family: 'IBM Plex Mono', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 18px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: lowercase;
+  padding-block: 4px;
+  padding-inline: 13.4px;
+}
+
+.header__theme-menu-button:hover {
+  cursor: pointer;
+  outline: 1px solid var(--accent-color-alpha40);
+}
+
+.header__theme-menu-button:focus {
+  outline: transparent;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--button-color);
+}
+
+.header__theme-menu-button:active {
+  outline: 1px solid var(--button-color);
+}
+
+.header__theme-menu-button_active {
+  pointer-events: none;
+  outline: 1px solid var(--button-color);
+}
+
+.header__simbol {
+  color: var(--accent-color);
+  font-family: 'IBM Plex Mono', sans-serif;
+  font-weight: 400;
+  font-size: 18px;  
+  line-height: 25px;
+  text-align: right;
+  margin-inline-end: 38px;
+  margin-block-start: 10px;
+}
+
+.header__simbol::after {
+  content: '';
+  display: inline-block;
+  border-radius: 50%;
+  width: 9px;
+  height: 9px;
+  background-color: var(--accent-color);
+  position: absolute;
+  box-shadow: 0px 0px 4px 2px var(--accent-color);
+  top: 18px;
+  right: 19px;
+}
+
+.header__title {
+  font-family: 'IBM Plex Mono', sans-serif;
+  font-weight: 700;
+  font-size: 116px;
+  line-height: 83%;
+  color: var(--title-color);
+  text-shadow: 4px 4px var(--accent-color);
+  grid-row-start: 4;
+  grid-row-end: auto;
+  margin: 0 10px;
+}
+
+.header__trivium {
+  grid-row-start: 6;
+  grid-row-end: auto;
+  margin-inline: 8px;
+}
+
+.decorated-zone {
+  position: relative;
+}
+
+.decorated-zone::after {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-top: 1px solid var(--decor-color);
+  border-right: 1px solid var(--decor-color);
+  top: 10px;
+  right: 10px;
+}
+
+.decorated-zone::before {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-bottom: 1px solid var(--decor-color);
+  border-left: 1px solid var(--decor-color);
+  bottom: 10px;
+  left: 10px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin-inline: 10px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.general-topic {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section__how-to > .how-to-card  h3 {
+  margin-block-end: 10px;
+}
+
+.section__title {
+  color: var(--accent-color);
+}
+
+.title-decor {
+  font-family: 'IBM Plex Mono', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23.4px;
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+}
+
+.title-thin {
+  font-weight: 400;
+}
+
+.text-link {
+  text-decoration: none;
+  text-shadow: .09em .09em var(--accent-color);
+}
+
+.text-link:hover {
+  border-bottom: 1px solid var(--text-color);
+}
+
+.text-link:focus {
+  outline: transparent;
+}
+
+.text-link:focus-visible {
+  outline: 1px solid var(--text-color);
+}
+
+.section__galery {
+  gap: 10px;
+}
+
+.galery__image {
+  inline-size: 100%;
+}
+
+.footer {
+  height: 1vh;
+  min-height: 668px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__title {
+  font-family: 'IBM Plex Mono', sans-serif;
+  font-weight: 700;
+  font-size: 116px;
+  line-height: 83%;
+  color: var(--title-color);
+  text-shadow: 2px 2px #FF0070;
+}
+
+@media (width >= 768px) {
+  .header {
+    min-height: 1024px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    margin-block-end: 60px;
+  }
+
+  .header__simbol {
+    grid-row-start: 1;
+    grid-column-start: 2;
+    margin-inline-end: 48px;
+    margin-block-start: 20px;
+  }
+
+  .header__simbol::after {
+    top: 28px;
+    right: 29px;
+  }
+  
+  .header__theme-menu {
+    align-self: center;
+    justify-self: right;
+    margin-inline-end: 20px;
+    grid-row-start: 2;
+    grid-column-start: 2;
+  }
+
+  .header__title {
+    grid-row-start: 4;
+    grid-row-end: auto;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    margin: 0 10px;
+    font-size: 120px;
+  }
+
+  .header__trivium {
+    margin-inline: 0;
+    margin-inline-end: 20px;
+    grid-column-start: 2;
+    grid-column-end: auto;
+    grid-row-start: 6;
+    grid-row-end: auto;
+    align-self: flex-start;
+  }
+
+  .content {
+    margin-inline: 20px;
+  }
+
+  .text-link {
+    text-decoration: none;
+    text-shadow: .12em .12em var(--accent-color);
+}
+
+  .section {
+    display: grid;
+    gap: 20px;
+  }
+
+  .section__why-so-hard {
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: repeat(2, auto);
+  }
+
+  .section__concentration {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, min-content);
+  }
+
+  .concentration-title {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+
+  .concentration-card {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 5;
+  }
+
+  .section__how-to {
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: repeat(2, auto);
+  }
+
+  .galery {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
+    gap: 20px;
+  }
+
+  .galery__image {
+    object-fit: cover;
+    block-size: 100%;
+  }
+
+  .galery__image-sunset {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  .galery__image-ice-cream {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 3;
+    grid-column-end: auto;
+  }
+
+  .galery__image-tape {
+    grid-row-start: 2;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .galery__image-books {
+    grid-row-start: 2;
+    grid-row-end: auto;
+    grid-column-start: 2;
+    grid-column-end: auto;
+  }
+
+  .galery__image-street {
+    grid-row-start: 3;
+    grid-row-end: auto;
+    grid-column-start: 2;
+    grid-column-end: 4;
+  }
+
+  .footer {
+    min-height: 1024px;
+  }
+
+}
+
+@media (width >= 1024px) {
+  .header {
+    min-height: 768px;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+  }
+
+  .header__simbol {
+    grid-row-start: 1;
+    grid-column-start: 6;
+  }
+  
+  .header__theme-menu-list {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .header__theme-menu {
+    align-self: flex-start;
+    justify-self: center;
+    margin-inline-end: 0;
+    margin-block-start: 20px;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 3;
+    grid-column-end: 5;
+  }
+
+  .header__title {
+    grid-row-start: 3;
+    grid-row-end: auto;
+    grid-column-start: 1;
+    grid-column-end: 6;
+    margin: 0 10px;
+    font-size: 156px;
+    align-self: flex-end;
+  }
+
+  .header__trivium {
+    margin-inline-end: 20px;
+    grid-column-start: 4;
+    grid-column-end: 7;
+    grid-row-start: 4;
+    grid-row-end: auto;
+    align-self: flex-end;
+  }
+
+  .concentration-card {
+    flex-direction: row;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 5;
+  }
+
+  .concentration-card .general-topic {
+    min-width: 315px;
+  }
+
+  .footer {
+    min-height: 768px;
+  }
+
 }

@@ -40,3 +40,10 @@ a {
   font-size: inherit;
   line-height: inherit;
 }
+
+h2,
+h3 {
+  font-size: 18px;
+  line-height: 23.4px;
+  font-weight: 700;
+}

@@ -11,7 +11,7 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
-  font-family: 'IBM Plex Mono', sans-serif;
+  font-family: 'IBM Plex Mono', monospace;
   font-weight: 400;
   font-size: 18px;
   line-height: 23.4px;
@@ -19,7 +19,7 @@
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
 
 .header {
-  height: 1vh;
+  height: 100vh;
   min-height: 668px;
   display: grid;
   grid-template-columns: 1fr;
@@ -75,7 +75,7 @@
 
 .header__simbol {
   color: var(--accent-color);
-  font-family: 'IBM Plex Mono', sans-serif;
+  font-family: 'IBM Plex Mono', monospace;
   font-weight: 400;
   font-size: 18px;
   line-height: 25px;
@@ -98,9 +98,9 @@
 }
 
 .header__title {
-  font-family: 'IBM Plex Mono', sans-serif;
+  font-family: 'IBM Plex Mono', monospace;
   font-weight: 700;
-  font-size: 116px;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 83%;
   color: var(--title-color);
   text-shadow: 4px 4px var(--accent-color);
@@ -170,17 +170,17 @@
   gap: 20px;
 }
 
-.section__how-to > .how-to-card  h3 {
+.title-margin {
   margin-block-end: 10px;
 }
 
 .section__title {
-  color: var(--accent-color);
+  color: var(--subtitle-color);
 }
 
 .title-decor {
   background-color: var(--accent-color);
-  color: var(--bg-color);
+  color: var(--subtitle-color-accented);
 }
 
 .title-thin {
@@ -219,7 +219,7 @@
 }
 
 .footer {
-  height: 1vh;
+  height: 100vh;
   min-height: 668px;
   display: flex;
   justify-content: center;
@@ -227,9 +227,9 @@
 }
 
 .footer__title {
-  font-family: 'IBM Plex Mono', sans-serif;
+  font-family: 'IBM Plex Mono', monospace;
   font-weight: 700;
-  font-size: 116px;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 83%;
   color: var(--title-color);
   text-shadow: 2px 2px #FF0070;
@@ -280,7 +280,7 @@
     grid-row-end: auto;
     grid-column-start: 1;
     grid-column-end: 3;
-    font-size: 120px;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     margin: 0;
     padding-block-start: 29px;
   }
@@ -393,6 +393,10 @@
     margin-block-start: 20px;
   }
 
+  .footer__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
 } 
 
 @media (width >= 1024px) {
@@ -430,7 +434,6 @@
     grid-column-start: 1;
     grid-column-end: 6;
     margin: 0;
-    font-size: 156px;
     padding-block-start: 0;
     align-self: center;
   }
@@ -476,9 +479,4 @@
   .footer {
     min-height: 768px;
   }
-
-  .footer__title {
-    font-size: 157px;
-  }
-
 }

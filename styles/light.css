@@ -14,9 +14,12 @@
     --accent-color-alpha40: #32312D66;
     --decor-color: #353430;
     --button-color: #353430;
+    --subtitle-color-accented: #353430;
+    --subtitle-color: #353430;
   }
 
-  .header__simbol {
+  :root.theme-auto {
+    .header__simbol {
     color: transparent;
     background-color: transparent;
   }
@@ -25,6 +28,7 @@
     background-color: transparent;
     box-shadow: 0px 0px 4px 2px transparent;
   }
+}
 }
 
 :root.theme-light {
@@ -36,6 +40,8 @@
   --accent-color-alpha40: #32312D66;
   --decor-color: #353430;
   --button-color: #353430;
+  --subtitle-color-accented: #353430;
+  --subtitle-color: #353430;
 
   .header__simbol {
     color: transparent;
